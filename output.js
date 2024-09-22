@@ -54,3 +54,59 @@ numbers3.every((val, idx, array) => {
     console.log(val);
     return true;
 });
+function printf(value) {
+    if (typeof value === 'string') {
+        return console.log(`singow line ${value}`);
+    }
+    else if (Array.isArray(value)) {
+        console.log("motile line");
+        for (let i of value) {
+            console.log(i);
+        }
+    }
+}
+console.log("test for 函数签名与签名实现");
+printf("ttt");
+printf(["ttt", "kkk"]);
+let myMap = new Map([
+    ["ttt", 1]
+]);
+let myMap2 = myMap.set("kkk", 1);
+console.log("test for 引用");
+console.log(myMap);
+console.log(myMap2);
+let Person1 = {
+    name: "Tom",
+    age: 30,
+    sayHi: () => {
+        console.log("Hi Tom");
+    }
+};
+let Person2 = {
+    name: "Jim",
+    age: 20,
+    sayHi: () => {
+        console.log("Hi Jim");
+    }
+};
+console.log("对象测试");
+console.log(Person1.name);
+console.log(Person2.name);
+Person1.sayHi();
+Person2.sayHi();
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+class violiant extends Person {
+    constructor(name, like) {
+        super(name);
+        this.like = like;
+    }
+}
+let vio = new violiant("ttt", "aaa");
+let Per = new Person("ttt");
+console.log("test for 隐式转换及instanceof的使用");
+console.log(vio instanceof violiant);
+console.log(vio instanceof Person);

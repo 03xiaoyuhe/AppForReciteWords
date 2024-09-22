@@ -22,6 +22,5 @@ numbers3.every((val, idx, array) => {
     if (val > 5) return false;
     console.log(val);
     return true;
-
 }
 )
